@@ -22,8 +22,4 @@ public class Timer : MonoBehaviour
     {
         startTime = Time.time;
     }
-    void OnGUI()
-    {
-        GUI.Label(new Rect(300, 100, 100, 20), (ellapsedTime.ToString()));
-    }
 }

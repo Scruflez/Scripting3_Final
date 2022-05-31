@@ -9,6 +9,7 @@ public class AutoMovement : MonoBehaviour
     int targetIndex;
 
     UnityEngine.AI.NavMeshAgent agent;
+    public float pSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class AutoMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        pSpeed = agent.speed;
         // Set the destination
         agent.SetDestination(targetPoints[targetIndex].position);
 
@@ -26,8 +28,10 @@ public class AutoMovement : MonoBehaviour
         {
             targetIndex++;
 
+            // Agent reaches the last checkpoint
             if (targetIndex >= targetPoints.Length)
             {
+                // Agent returns to the first point
                 targetIndex = 0;
             }
         }

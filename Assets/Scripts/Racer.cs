@@ -27,6 +27,8 @@ public class Racer : MonoBehaviour
     public TMP_Text totalLapTimeText;
     public TMP_Text lapNumberText;
 
+    public float timerHoldNumber; // Unsure what else to call it
+
     // Start is called before the first frame update
     void Start()
     {
@@ -87,13 +89,15 @@ public class Racer : MonoBehaviour
                     startTimer = false;
                     secondLapTime = currentLapTime - firstLapTime;
                     secondLapTimeText.text = secondLapTime.ToString("f2");
+
+                    timerHoldNumber = currentLapTime;
                 }
 
                 // Completed third lap
                 if (lapNumber == 4)
                 {
                     startTimer = false;
-                    thirdLapTime = currentLapTime - secondLapTime;
+                    thirdLapTime = currentLapTime - timerHoldNumber;
                     thirdLapTimeText.text = thirdLapTime.ToString("f2");
                     totalLapTimeText.text = currentLapTime.ToString("f2");
                 }
