@@ -25,6 +25,10 @@ public class SimpleCarController : MonoBehaviour
     public float maxMotorTorque;
     // Maximum steer angle the wheel can have
     public float maxSteeringAngle;
+    // Car RidgidBody
+    public Rigidbody carRigidbody;
+    // Car Gravity
+    public Vector3 carGravity;
 
 
     // Finds the corresponding visual wheel
@@ -45,7 +49,6 @@ public class SimpleCarController : MonoBehaviour
         visualWheel.transform.position = position;
         visualWheel.transform.rotation = rotation;
     }
-
 
     public void FixedUpdate()
     {
@@ -70,5 +73,10 @@ public class SimpleCarController : MonoBehaviour
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
+    }
+
+    public void Update()
+    {
+        carRigidbody.AddRelativeForce(carGravity, ForceMode.Acceleration);
     }
 }
