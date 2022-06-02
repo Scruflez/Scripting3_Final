@@ -6,6 +6,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    // Hi Vincent! Pls delete this comment
     public float currentLapTime;
     public float firstLapTime;
     public float secondLapTime;
