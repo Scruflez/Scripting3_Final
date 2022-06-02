@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Racer : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     public float currentLapTime;
     public float firstLapTime;
@@ -32,7 +32,7 @@ public class Racer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -53,15 +53,15 @@ public class Racer : MonoBehaviour
             lapNumberText.text = 3 + "/3";
         }
 
-            // if the startTimer hasn't started
-            if (startTimer == false)
-            {
-                startTimer = true;
+        // if the startTimer hasn't started
+        if (startTimer == false)
+        {
+            startTimer = true;
 
-                checkpoint1 = false;
-                checkpoint2 = false;
-                checkpoint3 = false;
-            }
+            checkpoint1 = false;
+            checkpoint2 = false;
+            checkpoint3 = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
