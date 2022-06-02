@@ -77,6 +77,6 @@ public class SimpleCarController : MonoBehaviour
 
     public void Update()
     {
-        carRigidbody.AddRelativeForce(carGravity, ForceMode.Acceleration);
+        carRigidbody.AddRelativeForce(carGravity*Time.deltaTime, ForceMode.Acceleration);
     }
 }
