@@ -2493,8 +2493,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1003950293}
-  - component: {fileID: 1003950295}
   - component: {fileID: 1003950294}
+  - component: {fileID: 1003950295}
   - component: {fileID: 1003950292}
   - component: {fileID: 1003950291}
   - component: {fileID: 1003950290}
@@ -2633,7 +2633,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1003950288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93e7b35bad0491f49a738ecc391b75c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e03c52e897a96648af7319fc4c8ebeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentLapTime: 0
@@ -2645,12 +2645,12 @@ MonoBehaviour:
   checkpoint2: 0
   checkpoint3: 0
   lapNumber: 1
-  timerText: {fileID: 0}
-  firstLapTimeText: {fileID: 0}
-  secondLapTimeText: {fileID: 0}
-  thirdLapTimeText: {fileID: 0}
-  totalLapTimeText: {fileID: 0}
-  lapNumberText: {fileID: 0}
+  timerText: {fileID: 714744248}
+  firstLapTimeText: {fileID: 822883732}
+  secondLapTimeText: {fileID: 61834608}
+  thirdLapTimeText: {fileID: 293800884}
+  totalLapTimeText: {fileID: 2047175627}
+  lapNumberText: {fileID: 733111771}
   timerHoldNumber: 0
 --- !u!1 &1060372356
 GameObject:
