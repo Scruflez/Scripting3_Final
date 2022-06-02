@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: d77ce157bf1e5d747a3e9be80d5841c9
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - LowRider BB
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9261ede8df33c5d44872ce438aedfdeb, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
