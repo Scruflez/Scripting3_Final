@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3511057155846329789}
   - component: {fileID: 3511057155846329790}
   - component: {fileID: 3511057155846329791}
+  - component: {fileID: 1644584076888881816}
   m_Layer: 0
   m_Name: Car_Prefab
   m_TagString: Player
@@ -76,7 +77,20 @@ MonoBehaviour:
   maxMotorTorque: 2500
   maxSteeringAngle: 30
   carRigidbody: {fileID: 3511057155846329790}
-  carGravity: {x: 0, y: -150, z: 0}
+  carGravity: {x: 0, y: -35, z: 0}
+  customGravity: {fileID: 1644584076888881816}
+--- !u!75 &1644584076888881816
+ConstantForce:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3511057155846329728}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!1 &3511057155950222240
 GameObject:
   m_ObjectHideFlags: 0
