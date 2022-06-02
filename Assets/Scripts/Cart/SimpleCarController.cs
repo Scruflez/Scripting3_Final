@@ -30,6 +30,8 @@ public class SimpleCarController : MonoBehaviour
     // Car Gravity
     public Vector3 carGravity;
 
+    public ConstantForce customGravity;
+
 
     // Finds the corresponding visual wheel
     // Correctly applies the transform
@@ -52,6 +54,10 @@ public class SimpleCarController : MonoBehaviour
 
     public void FixedUpdate()
     {
+        // Apply Downward Force
+        //carRigidbody.AddRelativeForce(carGravity * Time.fixedDeltaTime, ForceMode.Acceleration);
+        customGravity.relativeForce = carGravity * carRigidbody.mass;
+
         // Movement forward with input
         float motor = maxMotorTorque * Input.GetAxis(playerAcceleration);
         // Sideways steering with side inputs
@@ -77,6 +83,7 @@ public class SimpleCarController : MonoBehaviour
 
     public void Update()
     {
-        carRigidbody.AddRelativeForce(carGravity*Time.deltaTime, ForceMode.Acceleration);
+        // Apply Downward Force
+        //customGravity.relativeForce = carGravity*carRigidbody.mass;
     }
 }
