@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
     public float t;
 
     //private bool countDownRunning;
-    float countdown = 4;
+    //float countdown = 4;
 
     private void Start()
     {
