@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public int nextCheckpoint;
     public int lapNumber;
     public bool startedFirstLap;
+    public bool finishedLastLap;
 
     public float[] lapTimes;
     public int t_minutes;
@@ -37,6 +38,7 @@ public class Player : MonoBehaviour
     public GameManager gameManager;
     public GameObject previousCheckpoint;
     public UIManager ui;
+    public Player otherPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -86,6 +88,7 @@ public class Player : MonoBehaviour
 
         else if (lapNumber == gameManager.totalLaps + 1)
         {
+            finishedLastLap = true;
             ui.WinScreenScore();
         }
 
