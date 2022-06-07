@@ -19,23 +19,24 @@ public class Checkpoint : MonoBehaviour
                 player.nextCheckpoint = lap.SetNextCheckpoint(order);
 
                 player.previousCheckpoint = gameObject;
+            
+                if (order == 0)
+                {
+                    if (player.startedFirstLap)
+                    {
+                        player.lapNumber++;
+
+                        player.SetLapTime();
+                    }
+
+                    else
+                    {
+                        player.startedFirstLap = true;
+                        player.lapNumber++;
+                    }
+                }
             }
 
-            if (order == 0)
-            {
-                if (player.startedFirstLap)
-                {
-                    player.lapNumber++;
-
-                    player.SetLapTime();
-                }
-
-                else
-                {
-                    player.startedFirstLap = true;
-                    player.lapNumber++;
-                }
-            }
         }
         
     }
