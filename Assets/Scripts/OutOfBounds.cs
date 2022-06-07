@@ -8,6 +8,10 @@ public class OutOfBounds : MonoBehaviour
     public bool timerRunning;
 
     public Player player;
+    
+    // Currently, the code only works if one player is in the out of bounds zone.
+    // If another player enters, the timer resets back to 3 and starts over,
+    // sparing the first player from being moved
 
     // Update is called once per frame
     void Update()
