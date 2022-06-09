@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 1194813680}
   - component: {fileID: 3511057155846329791}
   m_Layer: 0
-  m_Name: Car_Prefab
+  m_Name: Car1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,10 +105,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.7733269
-  m_Height: 5.1413193
+  m_Radius: 0.75
+  m_Height: 4.15
   m_Direction: 2
-  m_Center: {x: 0, y: 0.91, z: -0.064734936}
+  m_Center: {x: 0, y: 0.95, z: -0.05}
 --- !u!114 &3511057155846329791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +163,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3511057155950222240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0.44, z: -1.414}
+  m_LocalPosition: {x: 0.9, y: 0.5, z: -1.414}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4883636839454824903}
@@ -259,7 +259,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3511057156366151821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0.44, z: 1.444622}
+  m_LocalPosition: {x: -0.9, y: 0.5, z: 1.444622}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4883636839454824909}
@@ -321,7 +321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3511057156813167155}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0.44, z: -1.414}
+  m_LocalPosition: {x: -0.9, y: 0.5, z: -1.414}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4883636839454824897}
@@ -383,7 +383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3511057157127394135}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0.44, z: 1.444622}
+  m_LocalPosition: {x: 0.9, y: 0.5, z: 1.444622}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4883636839454824899}

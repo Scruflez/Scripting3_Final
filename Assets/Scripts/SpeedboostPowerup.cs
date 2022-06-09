@@ -6,15 +6,28 @@ public class SpeedboostPowerup : MonoBehaviour
 {
     public float boostStrength;
     public float numBoosts;
+    public bool useBoostCounter;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (numBoosts > 0)
+        if (useBoostCounter)
+        {
+            if (numBoosts > 0)
+            {
+                if (other.tag == "Player")
+                {
+                    Rigidbody carRigidbody = other.GetComponent<Rigidbody>();
+                    carRigidbody.velocity = carRigidbody.velocity.normalized * boostStrength;
+                    numBoosts--;
+                }
+            }
+        }
+        else
         {
             if (other.tag == "Player")
             {
                 Rigidbody carRigidbody = other.GetComponent<Rigidbody>();
-                carRigidbody.velocity = carRigidbody.velocity * boostStrength;
+                carRigidbody.velocity = carRigidbody.velocity.normalized * boostStrength;
                 numBoosts--;
             }
         }
