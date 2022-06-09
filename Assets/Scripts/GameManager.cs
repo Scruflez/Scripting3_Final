@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class GameManager : MonoBehaviour
+public static class GameManager
 {
-    [Min(1)] public int totalLaps;
+    // Min of 1
+    public static int totalLaps = 3;
 
 
 }
