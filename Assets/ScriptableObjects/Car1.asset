@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Car1
   m_EditorClassIdentifier: 
   carName: Car 1
-  image: {fileID: 21300000, guid: 332bf9ec8bf6f2f40a8c9c07cc48c173, type: 3}
+  image: {fileID: 21300000, guid: 9f8f52e73406439488747c29e85486cc, type: 3}
   speed: 8
   handling: 8
+  carModel: {fileID: 0}
