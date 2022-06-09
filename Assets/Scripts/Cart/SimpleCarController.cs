@@ -48,6 +48,7 @@ public class SimpleCarController : MonoBehaviour
     {
         GameObject carModel = Instantiate(chosenCar.currentCar.carModel, gameObject.transform);
         SetWheelReference(carModel);
+        
     }
 
     public void SetWheelReference(GameObject _object)
@@ -104,6 +105,6 @@ public class SimpleCarController : MonoBehaviour
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
         //Prints Speed
-        //Debug.Log(carRigidbody.velocity.magnitude);
+        Debug.Log(carRigidbody.velocity.magnitude);
     }
 }

@@ -16,7 +16,7 @@ public class Speedometer : MonoBehaviour
     public float speed;
     public TMP_Text speedText;
 
-    public AutoMovement player;
+    public Rigidbody player;
 
     private void Awake()
     {
@@ -32,7 +32,7 @@ public class Speedometer : MonoBehaviour
 
     private void Update()
     {
-        speed = player.pSpeed;
+        speed = player.velocity.magnitude;
         speedText.text = speed.ToString("f0");
         
         // Keeps Speed from going above the maximum
