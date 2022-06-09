@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 206989542}
   - component: {fileID: 206989541}
   - component: {fileID: 206989540}
+  - component: {fileID: 206989543}
   m_Layer: 0
   m_Name: Road Mesh Holder
   m_TagString: Untagged
@@ -384,12 +385,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206989539}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -75.76104, y: 121.96726, z: -98.89062}
+  m_LocalPosition: {x: -75.73, y: 121.96726, z: -98.89062}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1403379512}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &206989543
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206989539}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1104709828}
 --- !u!1 &368224098
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,8 +429,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368224098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 76.47428, y: -122.93065, z: 96.436554}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 74.259, y: -122.61, z: 94.858}
+  m_LocalScale: {x: 1.455, y: 1.455, z: 1.455}
   m_Children:
   - {fileID: 1859833568}
   m_Father: {fileID: 0}
@@ -631,7 +646,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691586448}
   m_LocalRotation: {x: -0, y: -0.02455143, z: -0, w: 0.99969864}
-  m_LocalPosition: {x: 4.959999, y: -0.0049972534, z: 0.23999786}
+  m_LocalPosition: {x: 4.9599824, y: -0.0050705327, z: 0.24011357}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1429269701}
@@ -754,6 +769,7 @@ GameObject:
   - component: {fileID: 706332886}
   - component: {fileID: 706332885}
   - component: {fileID: 706332884}
+  - component: {fileID: 706332887}
   m_Layer: 0
   m_Name: Road Mesh Holder
   m_TagString: Untagged
@@ -826,6 +842,20 @@ Transform:
   m_Father: {fileID: 1429269701}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &706332887
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706332883}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 117914999}
 --- !u!1 &771640668
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,8 +880,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771640668}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 76.47428, y: -122.93065, z: 96.436554}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 74.259, y: -122.61, z: 94.858}
+  m_LocalScale: {x: 1.455, y: 1.455, z: 1.455}
   m_Children:
   - {fileID: 1169512291}
   - {fileID: 1377403708}
@@ -1053,6 +1083,7 @@ GameObject:
   - component: {fileID: 1169512291}
   - component: {fileID: 1169512290}
   - component: {fileID: 1169512289}
+  - component: {fileID: 1169512292}
   m_Layer: 0
   m_Name: Road Mesh Holder
   m_TagString: Untagged
@@ -1125,6 +1156,20 @@ Transform:
   m_Father: {fileID: 771640669}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &1169512292
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169512288}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1530727277}
 --- !u!1 &1258621229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,7 +1196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258621229}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.411003, y: -0.7200012, z: 1.6279984}
+  m_LocalPosition: {x: -4.411085, y: -0.7200733, z: 1.6280237}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1403379512}
@@ -1403,7 +1448,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377403705}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.7309189, y: -5.467346, z: 5.4344635}
+  m_LocalPosition: {x: 1.730976, y: -5.467439, z: 5.4344416}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 771640669}
@@ -1433,8 +1478,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1403379511}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75.76104, y: -121.96726, z: 98.89062}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 73.221, y: -121.21, z: 98.429}
+  m_LocalScale: {x: 1.455, y: 1.455, z: 1.455}
   m_Children:
   - {fileID: 1258621230}
   - {fileID: 206989542}
@@ -1465,8 +1510,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429269700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 76.47428, y: -122.93065, z: 96.436554}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 74.259, y: -122.61, z: 94.858}
+  m_LocalScale: {x: 1.455, y: 1.455, z: 1.455}
   m_Children:
   - {fileID: 691586449}
   - {fileID: 706332886}
@@ -1761,6 +1806,7 @@ GameObject:
   - component: {fileID: 1859833568}
   - component: {fileID: 1859833570}
   - component: {fileID: 1859833569}
+  - component: {fileID: 1859833571}
   m_Layer: 0
   m_Name: Road Mesh Holder
   m_TagString: Untagged
@@ -1832,4 +1878,18 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859833567}
+  m_Mesh: {fileID: 406807006}
+--- !u!64 &1859833571
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859833567}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 406807006}
