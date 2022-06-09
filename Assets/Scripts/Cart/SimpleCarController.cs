@@ -94,7 +94,7 @@ public class SimpleCarController : MonoBehaviour
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
 
-        checkBreaks();
+        //checkBreaks();
         //Prints Speed
         Debug.Log(motor);
         //Debug.Log(carRigidbody.velocity.magnitude);
@@ -102,6 +102,7 @@ public class SimpleCarController : MonoBehaviour
     }
 
     // WIP
+    /*
     public void checkBreaks()
     {
         if (carRigidbody.velocity.magnitude > 0 && Input.GetAxis(playerAcceleration) < 0)
@@ -109,4 +110,5 @@ public class SimpleCarController : MonoBehaviour
             carRigidbody.velocity = carRigidbody.velocity / 1.05f;
         }
     }
+    */
 }
