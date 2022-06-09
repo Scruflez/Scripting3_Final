@@ -13,6 +13,7 @@ public class PlayerUI : MonoBehaviour
     public TMP_Text lap1Time;
     public TMP_Text lap2Time;
     public TMP_Text lap3Time;
+    public TMP_Text totalLapTimeText;
     public Player player;
     public GameObject playerEndTimeScreen;
 
@@ -25,7 +26,7 @@ public class PlayerUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        totalTime.text = AsRaceTime(player.totalLapTime);
+        totalTime.text = AsRaceTime(player.currentTime);
         //currentTime.text = AsRaceTime(player.lapTimes[0]);
         laps.text = "Laps: " + (player.lapNumber + 1) + "/" + GameManager.totalLaps;
 
@@ -41,7 +42,7 @@ public class PlayerUI : MonoBehaviour
         lap1Time.text = AsRaceTime(player.lapTimes[1]);
         lap2Time.text = AsRaceTime(player.lapTimes[2]);
         lap3Time.text = AsRaceTime(player.lapTimes[3]);
-
+        totalLapTimeText.text = AsRaceTime(player.lapTimes[1] + player.lapTimes[2] + player.lapTimes[3]);
     }
 
     public static string AsRaceTime(float seconds)

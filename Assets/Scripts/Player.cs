@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public bool finishedLastLap;
 
     public float[] lapTimes;
-    public float totalLapTime;
+    public float currentTime;
 
 
 
@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         lapTimes[0] += Time.deltaTime;
-        totalLapTime += Time.deltaTime;
+        currentTime += Time.deltaTime;
     }
 
     public void SetLapTime()
