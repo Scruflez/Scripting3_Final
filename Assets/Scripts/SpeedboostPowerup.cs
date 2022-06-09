@@ -5,14 +5,18 @@ using UnityEngine;
 public class SpeedboostPowerup : MonoBehaviour
 {
     public float boostStrength;
+    public float numBoosts;
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collided");
-        if (other.tag == "Player")
+        if (numBoosts > 0)
         {
-            Rigidbody carRigidbody = other.GetComponent<Rigidbody>();
-            carRigidbody.velocity = carRigidbody.velocity * boostStrength;
+            if (other.tag == "Player")
+            {
+                Rigidbody carRigidbody = other.GetComponent<Rigidbody>();
+                carRigidbody.velocity = carRigidbody.velocity * boostStrength;
+                numBoosts--;
+            }
         }
     }
 }

@@ -20,7 +20,14 @@ public class CarSelect : MonoBehaviour
     public Button confirm;
     public TextMeshProUGUI buttonText;
 
+    [Header("Sliders")]
+    //public float currentSpeed; // Created with the intention that the sliders will visably go up and down as the player switches cars on screen
+    //public float currentHandling;
+    public Slider carSpeedSlider;
+    public Slider carHandlingSlider;
+
     private bool AlreadyClicked = false;
+
 
     private void Start()
     {
@@ -36,6 +43,9 @@ public class CarSelect : MonoBehaviour
         carName.text = _currentCar.carName;
         carSpeed.text = "Speed: " + _currentCar.speed;
         carHandling.text = "Handling: " + _currentCar.handling;
+        
+        carSpeedSlider.value = _currentCar.speed;
+        carHandlingSlider.value = _currentCar.handling;
     }
 
     public void OnSelectionLeft()
