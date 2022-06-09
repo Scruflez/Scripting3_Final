@@ -15,22 +15,31 @@ public class AxleInfo
 
 public class SimpleCarController : MonoBehaviour
 {
+    [Header("Player Inputs")]
     // Acceleration Input Name;
     public string playerAcceleration;
     // Steering Input Name
     public string playerSteering;
+
+    [Header("Axles")]
     // Information about each individual axle
     public List<AxleInfo> axleInfos;
+
+    [Header("Car Control Values")]
     // Maximum torque the motor can apply to wheel
     public float maxMotorTorque;
     // Maximum steer angle the wheel can have
     public float maxSteeringAngle;
-    // Car RidgidBody
-    public Rigidbody carRigidbody;
     // Car Gravity
     public Vector3 carGravity;
 
+    [Header("References")]
+    // Car RidgidBody
+    public Rigidbody carRigidbody;
+    // Reference to the Constant Force
     public ConstantForce customGravity;
+    // Center of Gravity
+    public GameObject centerOfMass;
 
 
     // Finds the corresponding visual wheel
@@ -54,8 +63,10 @@ public class SimpleCarController : MonoBehaviour
 
     public void FixedUpdate()
     {
+        // Adjust Center of Mass
+        carRigidbody.centerOfMass = centerOfMass.transform.localPosition;
+        
         // Apply Downward Force
-        //carRigidbody.AddRelativeForce(carGravity * Time.fixedDeltaTime, ForceMode.Acceleration);
         customGravity.relativeForce = carGravity * carRigidbody.mass;
 
         // Movement forward with input
@@ -79,11 +90,7 @@ public class SimpleCarController : MonoBehaviour
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
-    }
-
-    public void Update()
-    {
-        // Apply Downward Force
-        //customGravity.relativeForce = carGravity*carRigidbody.mass;
+        //Prints Speed
+        //Debug.Log(carRigidbody.velocity.magnitude);
     }
 }
