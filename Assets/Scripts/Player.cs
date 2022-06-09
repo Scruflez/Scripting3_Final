@@ -51,6 +51,7 @@ public class Player : MonoBehaviour
     {
         lapTimes[0] += Time.deltaTime;
 
+        /*
         t_minutes1 = ((int)lapTimes[1] / 60); // t(seconds0 / 60 = total minutes
         t_seconds1 = ((int)lapTimes[1] % 60); // t(seconds) % 60 = total seconds
         t_miliseconds1 = ((int)(lapTimes[1] * 100)) % 100; // (total seconds * 1000) % 1000 = total miliseconds;
@@ -67,6 +68,7 @@ public class Player : MonoBehaviour
         t_minutesTotal = ((int)totalLapTime / 60);  // t(seconds0 / 60 = total minutes
         t_secondsTotal = ((int)totalLapTime % 60); // t(seconds) % 60 = total seconds
         t_milisecondsTotal = ((int)(totalLapTime * 100)) % 100; // (total seconds * 1000) % 1000 = total miliseconds;
+        */
     }
 
     public void SetLapTime()
@@ -76,20 +78,22 @@ public class Player : MonoBehaviour
             // Set the lap time to be equal to the current lap time
             lapTimes[lapNumber] = lapTimes[0];
 
+            /*
             t_minutes = ((int)lapTimes[lapNumber] / 60); // t(seconds0 / 60 = total minutes
             t_seconds = ((int)lapTimes[lapNumber] % 60); // t(seconds) % 60 = total seconds
             t_miliseconds = ((int)(lapTimes[lapNumber] * 100)) % 100; // (total seconds * 1000) % 1000 = total miliseconds;
+            */
 
-            ui.DisplayLapTime();
+            //ui.DisplayLapTime();
 
             // Reset the current lap time
             lapTimes[0] = 0;
-        }
 
-        else if (lapNumber == gameManager.totalLaps + 1)
-        {
-            finishedLastLap = true;
-            ui.WinScreenScore();
+            if (lapNumber == gameManager.totalLaps)
+            {
+                finishedLastLap = true;
+                //ui.WinScreenScore();
+            }
         }
 
         else

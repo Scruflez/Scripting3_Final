@@ -32,7 +32,6 @@ public class Checkpoint : MonoBehaviour
                     else
                     {
                         player.startedFirstLap = true;
-                        player.lapNumber++;
                     }
                 }
             }

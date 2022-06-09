@@ -6,6 +6,7 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
+    /*
     [Header("Values")]
     public TMP_Text gameTimer;
     public TMP_Text lapNumberText;
@@ -23,6 +24,9 @@ public class UIManager : MonoBehaviour
     public GameObject playerUI;
     public GameObject winScreen;
     public TMP_Text resultText;
+    */
+
+    public Player[] players;
 
     // Start is called before the first frame update
     void Start()
@@ -30,12 +34,18 @@ public class UIManager : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        
+    }
+
+    /*
     // Update is called once per frame
     void Update()
     {
         gameTimer.text = string.Format("{0:00}:{1:00}:{2:00}", timer.t_minutes, timer.t_seconds, timer.t_miliseconds);
         
-        lapNumberText.text = playerThis.lapNumber + "/" + gameManager.totalLaps;
+        lapNumberText.text = (playerThis.lapNumber + 1) + "/" + gameManager.totalLaps;
     }
 
     public void DisplayLapTime()
@@ -69,4 +79,5 @@ public class UIManager : MonoBehaviour
             resultText.text = "Runner-Up!";
         }
     }
+    */
 }
