@@ -16,4 +16,4 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 9f8f52e73406439488747c29e85486cc, type: 3}
   speed: 8
   handling: 8
-  carModel: {fileID: 0}
+  carModel: {fileID: 3511057155846329728, guid: d34a5b7f5dd9aca4e8dbaea61526c1dc, type: 3}
