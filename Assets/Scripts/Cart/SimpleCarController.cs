@@ -11,6 +11,8 @@ public class AxleInfo
     public bool motor;
     // Does this wheel apply steer angle?
     public bool steering;
+
+    private Vector3 still;
 }
 
 public class SimpleCarController : MonoBehaviour
@@ -61,6 +63,7 @@ public class SimpleCarController : MonoBehaviour
         visualWheel.transform.rotation = rotation;
     }
 
+
     public void FixedUpdate()
     {
         // Adjust Center of Mass
@@ -90,7 +93,20 @@ public class SimpleCarController : MonoBehaviour
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
+
+        checkBreaks();
         //Prints Speed
+        Debug.Log(motor);
         //Debug.Log(carRigidbody.velocity.magnitude);
+        //Debug.Log(Input.GetAxis(playerAcceleration));
+    }
+
+    // WIP
+    public void checkBreaks()
+    {
+        if (carRigidbody.velocity.magnitude > 0 && Input.GetAxis(playerAcceleration) < 0)
+        {
+            carRigidbody.velocity = carRigidbody.velocity / 1.05f;
+        }
     }
 }
