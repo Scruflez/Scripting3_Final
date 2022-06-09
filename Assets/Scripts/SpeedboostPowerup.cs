@@ -15,6 +15,7 @@ public class SpeedboostPowerup : MonoBehaviour
             {
                 Rigidbody carRigidbody = other.GetComponent<Rigidbody>();
                 carRigidbody.velocity = carRigidbody.velocity * boostStrength;
+                numBoosts--;
             }
         }
     }
