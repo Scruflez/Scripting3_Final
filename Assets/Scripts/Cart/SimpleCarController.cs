@@ -11,8 +11,6 @@ public class AxleInfo
     public bool motor;
     // Does this wheel apply steer angle?
     public bool steering;
-
-    private Vector3 still;
 }
 
 public class SimpleCarController : MonoBehaviour
@@ -23,9 +21,9 @@ public class SimpleCarController : MonoBehaviour
     // Steering Input Name
     public string playerSteering;
 
-    [Header("Axles")]
     // Information about each individual axle
-    public List<AxleInfo> axleInfos;
+    //public List<AxleInfo> axleInfos;
+    WheelReference wheelReference;
 
     [Header("Car Control Values")]
     // Maximum torque the motor can apply to wheel
@@ -42,7 +40,20 @@ public class SimpleCarController : MonoBehaviour
     public ConstantForce customGravity;
     // Center of Gravity
     public GameObject centerOfMass;
+    // Selected Car
+    public ChosenCarSO chosenCar;
 
+    // Start
+    public void Start()
+    {
+        GameObject carModel = Instantiate(chosenCar.currentCar.carModel, gameObject.transform);
+        SetWheelReference(carModel);
+    }
+
+    public void SetWheelReference(GameObject _object)
+    {
+        wheelReference = _object.GetComponent<WheelReference>();
+    }
 
     // Finds the corresponding visual wheel
     // Correctly applies the transform
@@ -63,7 +74,6 @@ public class SimpleCarController : MonoBehaviour
         visualWheel.transform.rotation = rotation;
     }
 
-
     public void FixedUpdate()
     {
         // Adjust Center of Mass
@@ -78,7 +88,7 @@ public class SimpleCarController : MonoBehaviour
         float steering = maxSteeringAngle * Input.GetAxis(playerSteering);
 
         // Adjusts the wheels to move the car
-        foreach (AxleInfo axleInfo in axleInfos)
+        foreach (AxleInfo axleInfo in wheelReference.axleInfos)
         {
             if (axleInfo.steering)
             {
@@ -93,22 +103,7 @@ public class SimpleCarController : MonoBehaviour
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
-
-        //checkBreaks();
         //Prints Speed
-        Debug.Log(motor);
         //Debug.Log(carRigidbody.velocity.magnitude);
-        //Debug.Log(Input.GetAxis(playerAcceleration));
     }
-
-    // WIP
-    /*
-    public void checkBreaks()
-    {
-        if (carRigidbody.velocity.magnitude > 0 && Input.GetAxis(playerAcceleration) < 0)
-        {
-            carRigidbody.velocity = carRigidbody.velocity / 1.05f;
-        }
-    }
-    */
 }
