@@ -9,4 +9,5 @@ public class CarSO : ScriptableObject
     public Sprite image;
     public float speed;
     public float handling;
+    public GameObject carModel;
 }
