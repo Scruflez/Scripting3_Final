@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774dfab334383d744a11e76263048c62, type: 3}
   m_Name: Player2Car
   m_EditorClassIdentifier: 
-  currentCar: {fileID: 11400000, guid: fde72d2817d5b2041988126222092e0d, type: 2}
+  currentCar: {fileID: 11400000, guid: dd898970e1cd5594c9ec59c7a89d5cd1, type: 2}
