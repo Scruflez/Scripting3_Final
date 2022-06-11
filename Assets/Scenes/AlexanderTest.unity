@@ -2524,15 +2524,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba16e37573c71134b950e3bd29b7b206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 0
   nextCheckpoint: 0
   lapNumber: 0
   startedFirstLap: 0
   finishedLastLap: 0
   lapTimes: []
-  totalLapTime: 0
+  currentTime: 0
+  resetKey: 
   previousCheckpoint: {fileID: 614732784}
   ui: {fileID: 678802597}
+  thisPlayer: {fileID: 0}
   otherPlayer: {fileID: 1003950295}
   playerUI: {fileID: 0}
 --- !u!4 &930009776
@@ -2703,15 +2704,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba16e37573c71134b950e3bd29b7b206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 0
   nextCheckpoint: 0
   lapNumber: 0
   startedFirstLap: 0
   finishedLastLap: 0
   lapTimes: []
-  totalLapTime: 0
+  currentTime: 0
+  resetKey: 
   previousCheckpoint: {fileID: 614732784}
   ui: {fileID: 1205910511}
+  thisPlayer: {fileID: 1003950295}
   otherPlayer: {fileID: 930009775}
   playerUI: {fileID: 0}
 --- !u!54 &1003950296

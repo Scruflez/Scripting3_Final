@@ -948,6 +948,7 @@ MonoBehaviour:
   lap2Time: {fileID: 61834608}
   lap3Time: {fileID: 293800884}
   totalLapTimeText: {fileID: 2047175627}
+  placeText: {fileID: 1384799051}
   player: {fileID: 0}
   playerEndTimeScreen: {fileID: 2723799668386315914}
 --- !u!1 &1966404860017183468

@@ -7,13 +7,14 @@ using TMPro;
 public class PlayerUI : MonoBehaviour
 {
     public TMP_Text totalTime;
-    //public TMP_Text currentTime;
     public TMP_Text prevLapTime;
     public TMP_Text laps;
     public TMP_Text lap1Time;
     public TMP_Text lap2Time;
     public TMP_Text lap3Time;
     public TMP_Text totalLapTimeText;
+    public TMP_Text placeText;
+
     public Player player;
     public GameObject playerEndTimeScreen;
 
@@ -27,22 +28,42 @@ public class PlayerUI : MonoBehaviour
     void Update()
     {
         totalTime.text = AsRaceTime(player.currentTime);
-        //currentTime.text = AsRaceTime(player.lapTimes[0]);
-        laps.text = "Laps: " + (player.lapNumber + 1) + "/" + GameManager.totalLaps;
+        laps.text = "Lap: " + (player.lapNumber + 1) + "/" + GameManager.totalLaps;
 
         if (player.lapNumber > 0)
         {
             prevLapTime.text = AsRaceTime(player.lapTimes[player.lapNumber]);
         }
+
+        else if (player.lapNumber >= GameManager.totalLaps)
+        {
+            totalTime.text = " ";
+            laps.text = " ";
+        }
     }
 
-    public void SetPlayerEndTimeScreen()
+    public void SetPlayerEndTimeScreen(bool winner, bool tie)
     {
         playerEndTimeScreen.SetActive(true);
         lap1Time.text = AsRaceTime(player.lapTimes[1]);
         lap2Time.text = AsRaceTime(player.lapTimes[2]);
         lap3Time.text = AsRaceTime(player.lapTimes[3]);
         totalLapTimeText.text = AsRaceTime(player.lapTimes[1] + player.lapTimes[2] + player.lapTimes[3]);
+
+        if (winner && tie == false)
+        {
+            placeText.text = "Winner!";
+        }
+
+        if (winner == false && tie == false)
+        {
+            placeText.text = "Runner-Up!";
+        }
+
+        else
+        {
+            placeText.text = "Tie!";
+        }
     }
 
     public static string AsRaceTime(float seconds)

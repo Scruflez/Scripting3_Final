@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int playerID;
+    //public int playerID;
     public int nextCheckpoint;
     public int lapNumber;
     public bool startedFirstLap;
     public bool finishedLastLap;
+    public bool winner;
+    public bool tie;
 
     public float[] lapTimes;
     public float currentTime;
+    public float totalLapsTime;
 
-
+    public string resetKey;
 
     [Header("References")]
     public GameObject previousCheckpoint;
     public UIManager ui;
+    public Player thisPlayer;
     public Player otherPlayer;
 
     [HideInInspector] public PlayerUI playerUI;
@@ -26,6 +30,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         lapTimes = new float[GameManager.totalLaps + 1];
+        thisPlayer = GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -33,6 +38,11 @@ public class Player : MonoBehaviour
     {
         lapTimes[0] += Time.deltaTime;
         currentTime += Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            thisPlayer.transform.position = thisPlayer.previousCheckpoint.transform.position;
+        }
     }
 
     public void SetLapTime()
@@ -48,7 +58,31 @@ public class Player : MonoBehaviour
             if (lapNumber == GameManager.totalLaps)
             {
                 finishedLastLap = true;
-                playerUI.SetPlayerEndTimeScreen();
+                // if this player has finished the last lap, and the other player hasn't
+                if (finishedLastLap && otherPlayer.finishedLastLap == false)
+                {
+                    playerUI.SetPlayerEndTimeScreen(true, false);
+                }
+
+                else if (finishedLastLap && otherPlayer.finishedLastLap)
+                {
+                    totalLapsTime = lapTimes[1] + lapTimes[2] + lapTimes[3];
+
+                    if (totalLapsTime < otherPlayer.totalLapsTime)
+                    {
+                        playerUI.SetPlayerEndTimeScreen(true, false);
+                    }
+
+                    else if (totalLapsTime > otherPlayer.totalLapsTime)
+                    {
+                        playerUI.SetPlayerEndTimeScreen(false, false);
+                    }
+
+                    else
+                    {
+                        playerUI.SetPlayerEndTimeScreen(true, true);
+                    }
+                }
             }
         }
 
