@@ -42,7 +42,7 @@ public class PlayerUI : MonoBehaviour
         }
     }
 
-    public void SetPlayerEndTimeScreen(bool winner, bool tie)
+    public void SetPlayerEndTimeScreen(bool winner)
     {
         playerEndTimeScreen.SetActive(true);
         lap1Time.text = AsRaceTime(player.lapTimes[1]);
