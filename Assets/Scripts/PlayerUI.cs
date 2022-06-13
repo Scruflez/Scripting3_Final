@@ -50,20 +50,16 @@ public class PlayerUI : MonoBehaviour
         lap3Time.text = AsRaceTime(player.lapTimes[3]);
         totalLapTimeText.text = AsRaceTime(player.lapTimes[1] + player.lapTimes[2] + player.lapTimes[3]);
 
-        if (winner && tie == false)
+        if (winner)
         {
             placeText.text = "Winner!";
         }
 
-        if (winner == false && tie == false)
+        if (winner == false)
         {
             placeText.text = "Runner-Up!";
         }
 
-        else
-        {
-            placeText.text = "Tie!";
-        }
     }
 
     public static string AsRaceTime(float seconds)
