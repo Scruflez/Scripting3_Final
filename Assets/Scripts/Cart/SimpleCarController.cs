@@ -49,8 +49,8 @@ public class SimpleCarController : MonoBehaviour
     {
         GameObject carModel = Instantiate(chosenCar.currentCar.carModel, gameObject.transform);
         SetWheelReference(carModel);
-        maxMotorTorque = chosenCar.currentCar.speed * 350;
-        maxSteeringAngle = chosenCar.currentCar.handling * 2.5f;
+        maxMotorTorque = (chosenCar.currentCar.speed * 215) + 2000;
+        maxSteeringAngle = chosenCar.currentCar.handling * 1.15f;
     }
 
     public void SetWheelReference(GameObject _object)

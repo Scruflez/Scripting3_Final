@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     public bool startedFirstLap;
     public bool finishedLastLap;
     public bool winner;
-    public bool tie;
 
     public float[] lapTimes;
     public float currentTime;
@@ -39,9 +38,12 @@ public class Player : MonoBehaviour
         lapTimes[0] += Time.deltaTime;
         currentTime += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(resetKey))
         {
             thisPlayer.transform.position = thisPlayer.previousCheckpoint.transform.position;
+            thisPlayer.transform.rotation = thisPlayer.previousCheckpoint.transform.rotation;
+            Rigidbody carRigidbody = thisPlayer.GetComponent<Rigidbody>();
+            carRigidbody.velocity = carRigidbody.velocity.normalized * 0;
         }
     }
 
