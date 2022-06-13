@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
                 // if this player has finished the last lap, and the other player hasn't
                 if (finishedLastLap && otherPlayer.finishedLastLap == false)
                 {
-                    playerUI.SetPlayerEndTimeScreen(true, false);
+                    playerUI.SetPlayerEndTimeScreen(true);
                 }
 
                 else if (finishedLastLap && otherPlayer.finishedLastLap)
@@ -70,17 +70,17 @@ public class Player : MonoBehaviour
 
                     if (totalLapsTime < otherPlayer.totalLapsTime)
                     {
-                        playerUI.SetPlayerEndTimeScreen(true, false);
+                        playerUI.SetPlayerEndTimeScreen(true);
                     }
 
                     else if (totalLapsTime > otherPlayer.totalLapsTime)
                     {
-                        playerUI.SetPlayerEndTimeScreen(false, false);
+                        playerUI.SetPlayerEndTimeScreen(false);
                     }
 
                     else
                     {
-                        playerUI.SetPlayerEndTimeScreen(true, true);
+                        playerUI.SetPlayerEndTimeScreen(true);
                     }
                 }
             }
