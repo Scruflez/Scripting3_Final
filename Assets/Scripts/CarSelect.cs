@@ -7,10 +7,13 @@ using TMPro;
 
 public class CarSelect : MonoBehaviour
 {
+    [Header ("Scripting Objects")]
     public List<CarSO> cars = new List<CarSO>();
     public int currentCarIndex;
     public int playerOneSelect;
+    public ChosenCarSO playerOneCar;
     public int playerTwoSelect;
+    public ChosenCarSO playerTwoCar;
 
     [Header("References")]
     public Image carImage;
@@ -91,6 +94,7 @@ public class CarSelect : MonoBehaviour
             // Yes
             // Player 2 selected
             playerTwoSelect = currentCarIndex;
+            playerTwoCar.currentCar = cars[currentCarIndex];
 
             // for when we have an additional scene
             //    //SceneManager.LoadScene(0); // Right now, it calls itself
@@ -99,6 +103,7 @@ public class CarSelect : MonoBehaviour
         {
             // No -- First Click
             playerOneSelect = currentCarIndex;
+            playerOneCar.currentCar = cars[currentCarIndex];
             buttonText.text = "Start";
             
             AlreadyClicked = true;

@@ -43,12 +43,14 @@ public class SimpleCarController : MonoBehaviour
     // Selected Car
     public ChosenCarSO chosenCar;
 
+
     // Start
     public void Start()
     {
         GameObject carModel = Instantiate(chosenCar.currentCar.carModel, gameObject.transform);
         SetWheelReference(carModel);
-        
+        maxMotorTorque = chosenCar.currentCar.speed * 350;
+        maxSteeringAngle = chosenCar.currentCar.handling * 2.5f;
     }
 
     public void SetWheelReference(GameObject _object)
@@ -105,6 +107,6 @@ public class SimpleCarController : MonoBehaviour
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
         //Prints Speed
-        Debug.Log(carRigidbody.velocity.magnitude);
+        //Debug.Log(carRigidbody.velocity.magnitude);
     }
 }
