@@ -107,6 +107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2833462562699047050}
+  - component: {fileID: 3859592640422297446}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -131,6 +132,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &3859592640422297446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565928439120086092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba16e37573c71134b950e3bd29b7b206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 0
+  nextCheckpoint: 0
+  lapNumber: 0
+  startedFirstLap: 0
+  finishedLastLap: 0
+  lapTimes: []
+  t_minutes: 0
+  t_seconds: 0
+  t_miliseconds: 0
+  t_minutes1: 0
+  t_seconds1: 0
+  t_miliseconds1: 0
+  t_minutes2: 0
+  t_seconds2: 0
+  t_miliseconds2: 0
+  t_minutes3: 0
+  t_seconds3: 0
+  t_miliseconds3: 0
+  totalLapTime: 0
+  t_minutesTotal: 0
+  t_secondsTotal: 0
+  t_milisecondsTotal: 0
+  gameManager: {fileID: 0}
+  previousCheckpoint: {fileID: 0}
+  ui: {fileID: 0}
+  otherPlayer: {fileID: 0}
 --- !u!1 &3048916076976718052
 GameObject:
   m_ObjectHideFlags: 0
