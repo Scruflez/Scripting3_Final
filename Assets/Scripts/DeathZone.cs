@@ -11,6 +11,7 @@ public class DeathZone : MonoBehaviour
             Player player = other.GetComponent<Player>();
 
             player.transform.position = player.previousCheckpoint.transform.position;
+            player.transform.rotation = player.previousCheckpoint.transform.rotation;
         }
     }
 }
