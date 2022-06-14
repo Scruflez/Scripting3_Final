@@ -97,7 +97,7 @@ public class CarSelect : MonoBehaviour
             playerTwoCar.currentCar = cars[currentCarIndex];
 
             // for when we have an additional scene
-            //    //SceneManager.LoadScene(0); // Right now, it calls itself
+            SceneManager.LoadScene(2); // Right now, it calls itself
         }
         else
         {
