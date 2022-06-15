@@ -15,9 +15,12 @@ public class PlayerUI : MonoBehaviour
     public TMP_Text lap3Time;
     public TMP_Text totalLapTimeText;
     public TMP_Text placeText;
+    public TMP_Text countdownTimerText;
 
     public Player player;
     public GameObject playerEndTimeScreen;
+
+    public float displayTimer; // for the countdown timer
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +31,32 @@ public class PlayerUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (player.countdownTimer <= 3 && player.countdownTimer > 2)
+        {
+            countdownTimerText.text = "3";
+        }
+
+        else if (player.countdownTimer <= 2 && player.countdownTimer > 1)
+        {
+            countdownTimerText.text = "2";
+        }
+
+        else if (player.countdownTimer <= 1 && player.countdownTimer > 0)
+        {
+            countdownTimerText.text = "1";
+        }
+
+        else if (player.countdownTimer <= 0)
+        {
+            countdownTimerText.text = "GO";
+            displayTimer += Time.deltaTime;
+
+            if (displayTimer >= 1.5f)
+            {
+                countdownTimerText.text = " ";
+            }
+        }
+
         totalTime.text = AsRaceTime(player.currentTime);
         laps.text = "Lap: " + (player.lapNumber + 1) + "/" + GameManager.totalLaps;
 
@@ -40,6 +69,7 @@ public class PlayerUI : MonoBehaviour
         {
             totalTime.text = " ";
             laps.text = " ";
+            prevLapTime.text = " ";
         }
     }
 

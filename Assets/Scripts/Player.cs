@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     public float[] lapTimes;
     public float currentTime;
     public float totalLapsTime;
+    public float countdownTimer = 4f;
+    public bool isStarted = false;
 
     public string resetKey;
 
@@ -22,6 +24,7 @@ public class Player : MonoBehaviour
     public UIManager ui;
     public Player thisPlayer;
     public Player otherPlayer;
+    public Rigidbody playerRB;
 
     [HideInInspector] public PlayerUI playerUI;
 
@@ -30,20 +33,35 @@ public class Player : MonoBehaviour
     {
         lapTimes = new float[GameManager.totalLaps + 1];
         thisPlayer = GetComponent<Player>();
+        playerRB = otherPlayer.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        lapTimes[0] += Time.deltaTime;
-        currentTime += Time.deltaTime;
-
-        if (Input.GetKeyDown(resetKey))
+        if (isStarted)
         {
-            thisPlayer.transform.position = thisPlayer.previousCheckpoint.transform.position;
-            thisPlayer.transform.rotation = thisPlayer.previousCheckpoint.transform.rotation;
-            Rigidbody carRigidbody = thisPlayer.GetComponent<Rigidbody>();
-            carRigidbody.velocity = carRigidbody.velocity.normalized * 0;
+            lapTimes[0] += Time.deltaTime;
+            currentTime += Time.deltaTime;
+
+            if (Input.GetKeyDown(resetKey))
+            {
+                thisPlayer.transform.position = thisPlayer.previousCheckpoint.transform.position;
+                thisPlayer.transform.rotation = thisPlayer.previousCheckpoint.transform.rotation;
+                playerRB.velocity = playerRB.velocity.normalized * 0;
+                Rigidbody carRigidbody = thisPlayer.GetComponent<Rigidbody>();
+                carRigidbody.velocity = carRigidbody.velocity.normalized * 0;
+            }
+        }
+
+        else
+        {
+            countdownTimer -= Time.deltaTime;
+
+            if (countdownTimer < 0)
+            {
+                isStarted = true;
+            }
         }
     }
 
@@ -88,9 +106,6 @@ public class Player : MonoBehaviour
             }
         }
 
-        else
-        {
-            Debug.Log("Lap Comleted but the race is over");
-        }
+
     }
 }
