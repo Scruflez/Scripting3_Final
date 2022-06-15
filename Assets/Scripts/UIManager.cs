@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject playerUIPrefab;
     public GameObject parent;
-
+    
     public Player[] players;
 
     // Start is called before the first frame update

@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 221835414282034172, guid: 63097fa7f2e3e5743ad5c20343095686, type: 3}
       propertyPath: m_Name
-      value: P1UI
+      value: P1UI Variant
       objectReference: {fileID: 0}
     - target: {fileID: 221835414282034173, guid: 63097fa7f2e3e5743ad5c20343095686, type: 3}
       propertyPath: m_Pivot.x
@@ -93,6 +93,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 221835414282034173, guid: 63097fa7f2e3e5743ad5c20343095686, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2723799668386315914, guid: 63097fa7f2e3e5743ad5c20343095686, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

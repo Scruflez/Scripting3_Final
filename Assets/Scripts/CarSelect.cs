@@ -29,7 +29,8 @@ public class CarSelect : MonoBehaviour
     public Slider carSpeedSlider;
     public Slider carHandlingSlider;
 
-    private bool AlreadyClicked = false;
+    private bool alreadyClicked = false;
+    private bool bothSelected = false;
 
 
     private void Start()
@@ -71,42 +72,34 @@ public class CarSelect : MonoBehaviour
         SetStats(cars[currentCarIndex]);
     }
 
-    //public void PlayerOneConfirm()
-    //{
-    //    //playerOneSelect = currentCarIndex;
-    //    Debug.Log("Player 1");
-    //}
-
-    //public void PlayerTwoConfirm()
-    //{
-    //    //playerTwoSelect = currentCarIndex;
-    //    Debug.Log("Player 2");
-
-    //    // for when we have an additional scene
-    //    //SceneManager.LoadScene(0); // Right now, it calls itself
-    //}
 
     public void Click()
     {
         // Has the user already clicked?
-        if (AlreadyClicked)
+        if (alreadyClicked)
         {
             // Yes
             // Player 2 selected
             playerTwoSelect = currentCarIndex;
             playerTwoCar.currentCar = cars[currentCarIndex];
 
-            // for when we have an additional scene
-            SceneManager.LoadScene(2); // Right now, it calls itself
+            buttonText.text = "Start";
+            bothSelected = true;
         }
         else
         {
             // No -- First Click
             playerOneSelect = currentCarIndex;
             playerOneCar.currentCar = cars[currentCarIndex];
-            buttonText.text = "Start";
+            buttonText.text = "Confirm Player 2";
             
-            AlreadyClicked = true;
+            alreadyClicked = true;
         }
+
+        if (bothSelected)
+        {
+            SceneManager.LoadScene(2);
+        }
+
     }
 }

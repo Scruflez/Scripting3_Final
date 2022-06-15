@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class PlayerUI : MonoBehaviour
@@ -66,5 +67,10 @@ public class PlayerUI : MonoBehaviour
     {
         TimeSpan timeSpan = TimeSpan.FromSeconds(seconds);
         return timeSpan.ToString("mm':'ss':'ff");
+    }
+
+    public void ClickRestart()
+    {
+        SceneManager.LoadScene(1);
     }
 }
