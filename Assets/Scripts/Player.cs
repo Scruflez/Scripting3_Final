@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Countdown has finished
         if (isStarted)
         {
             lapTimes[0] += Time.deltaTime;
@@ -53,7 +54,7 @@ public class Player : MonoBehaviour
                 carRigidbody.velocity = carRigidbody.velocity.normalized * 0;
             }
         }
-
+        // Countdown starts
         else
         {
             countdownTimer -= Time.deltaTime;

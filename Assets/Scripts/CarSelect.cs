@@ -83,7 +83,7 @@ public class CarSelect : MonoBehaviour
             playerTwoSelect = currentCarIndex;
             playerTwoCar.currentCar = cars[currentCarIndex];
 
-            buttonText.text = "Start";
+            buttonText.text = "Starting...";
             bothSelected = true;
         }
         else
