@@ -12,6 +12,7 @@ public class DeathZone : MonoBehaviour
 
             player.transform.position = player.previousCheckpoint.transform.position;
             player.transform.rotation = player.previousCheckpoint.transform.rotation;
+            // Angular rotation
         }
     }
 }

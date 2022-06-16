@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     {
         lapTimes = new float[GameManager.totalLaps + 1];
         thisPlayer = GetComponent<Player>();
-        playerRB = otherPlayer.GetComponent<Rigidbody>();
+        playerRB = thisPlayer.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
                 playerRB.velocity = playerRB.velocity.normalized * 0;
                 Rigidbody carRigidbody = thisPlayer.GetComponent<Rigidbody>();
                 carRigidbody.velocity = carRigidbody.velocity.normalized * 0;
+                //Angular Velocitys
             }
         }
         // Countdown starts
