@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
             if (countdownTimer < 0)
             {
                 isStarted = true;
+                thisPlayer.GetComponent<SimpleCarController>().maxMotorTorque = (thisPlayer.GetComponent<SimpleCarController>().chosenCar.currentCar.speed * 215) + 2000;
             }
         }
     }
